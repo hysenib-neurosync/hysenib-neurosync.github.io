@@ -1,0 +1,104 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Award, GraduationCap, Heart, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navbar from "@/components/neurosync/Navbar";
+import Footer from "@/components/neurosync/Footer";
+
+export default function About() {
+  return (
+    <div className="min-h-screen bg-[#F8FAFC]">
+      <Navbar />
+      <div className="pt-16">
+        <section className="relative py-20 lg:py-32">
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#003EB3]/10 to-transparent" />
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <Link to="/" className="inline-flex items-center gap-2 text-sm text-[#003EB3]/60 hover:text-[#003EB3] mb-10 transition-colors">
+              <ArrowLeft size={15} /> Back to Home
+            </Link>
+            <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+              {/* Photo card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                className="lg:col-span-2"
+              >
+                <div className="relative max-w-sm mx-auto lg:mx-0">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-[#003EB3]/10 to-[#00D1FF]/10 rounded-3xl blur-2xl" />
+                  <div className="relative bg-gradient-to-br from-[#003EB3] to-[#00D1FF] rounded-3xl p-px">
+                    <div className="bg-[#F8FAFC] rounded-3xl p-8 text-center">
+                      <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-[#003EB3]/10 to-[#00D1FF]/10 flex items-center justify-center mb-6">
+                        <span className="font-heading font-extrabold text-4xl text-gradient">BH</span>
+                      </div>
+                      <h3 className="font-heading font-extrabold text-xl text-[#001529] mb-1">Bjorn Hyseni</h3>
+                      <p className="font-mono text-xs tracking-wider text-[#003EB3]/60 uppercase mb-6">Medical Student · JCU</p>
+                      <div className="flex justify-center gap-4">
+                        <div className="text-center">
+                          <p className="font-heading font-bold text-lg text-[#001529]">JCU</p>
+                          <p className="text-[10px] font-mono text-[#001529]/40 uppercase">University</p>
+                        </div>
+                        <div className="w-px bg-[#003EB3]/10" />
+                        <div className="text-center">
+                          <p className="font-heading font-bold text-lg text-[#001529]">MD</p>
+                          <p className="text-[10px] font-mono text-[#001529]/40 uppercase">Programme</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                className="lg:col-span-3"
+              >
+                <span className="font-mono text-xs tracking-[0.2em] text-[#00D1FF] uppercase block mb-4">About Your Mentor</span>
+                <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#001529] tracking-tight mb-6">
+                  A Student Who
+                  <br />
+                  <span className="text-gradient">Gets It</span>
+                </h1>
+                <p className="text-[#001529]/60 text-lg leading-relaxed mb-6 max-w-xl">
+                  NeuroSync is a Townsville-based brain training practice delivering NeurOptimal® Dynamical Neurofeedback® — a safe, natural, non-invasive and drug-free method that helps the brain become more flexible and resilient. Sessions are hosted within NQ Family Therapy Centre in Mundingburra and support better focus, sleep, stress management and cognitive performance.
+                </p>
+                <p className="text-[#001529]/60 text-lg leading-relaxed mb-6 max-w-xl">
+                  NeuroSync is for anyone seeking a calmer, more focused mind: students juggling study pressure, busy professionals, athletes managing performance anxiety, and individuals looking to de-stress or sleep better. Because NeurOptimal® works with your central nervous system rather than pushing it in any one direction, it is suitable for children, adolescents, adults and seniors alike.
+                </p>
+                <p className="text-[#001529]/60 text-lg leading-relaxed mb-10 max-w-xl">
+                  NeuroSync is built and run by Bjorn Hyseni, a medical student at James Cook University and a certified NeurOptimal® trainer. Every session is grounded in his clinical interest, lived student experience and a genuine commitment to accessible, high-quality care — conducted in English, Albanian or Italian.
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  {[
+                    { icon: GraduationCap, text: "Current JCU Medical Student" },
+                    { icon: Award, text: "Certified NeurOptimal® Trainer" },
+                    { icon: Heart, text: "Student-to-Student Mentorship" },
+                  ].map((item) => (
+                    <div key={item.text} className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white border border-[#003EB3]/10">
+                      <item.icon size={16} className="text-[#003EB3]" />
+                      <span className="text-sm font-medium text-[#001529]">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                  <Link to="/book" className="inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-white bg-[#003EB3] rounded-full hover:bg-[#002d8a] transition-all">
+                    Book a Session
+                  </Link>
+                  <Link to="/" className="inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-[#003EB3] bg-[#003EB3]/5 rounded-full hover:bg-[#003EB3]/10 transition-all">
+                    Back to Home
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </div>
+  );
+}

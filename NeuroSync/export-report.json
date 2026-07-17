@@ -1,0 +1,25 @@
+{
+  "exportedAt": "2026-07-17T04:14:07.333Z",
+  "exportDurationMs": 90327,
+  "fileCount": 100,
+  "assetCount": 1,
+  "resolvedAssetCount": 0,
+  "missingAssets": [
+    {
+      "url": "https://media.db.com/images/public/6a3d071446be282db770dfa6/040267f20_generated_91792ca5.png",
+      "error": "Failed to fetch"
+    }
+  ],
+  "warnings": [
+    "Preview iframe scan failed: Failed to read a named property 'document' from 'Window': Blocked a frame with origin \"https://app.base44.com\" from accessing a cross-origin frame."
+  ],
+  "diagnostics": {
+    "exportState": "IDLE",
+    "assetCount": 1,
+    "pendingFetches": 0,
+    "pendingImages": 0,
+    "domNodeCount": 6281,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "exportDurationMs": 90328
+  }
+}

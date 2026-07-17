@@ -1,0 +1,53 @@
+{
+  "name": "ContactSubmission",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "service": {
+      "type": "string",
+      "enum": [
+        "neuroptimal",
+        "tutoring",
+        "jcu-prep",
+        "other"
+      ],
+      "title": "Service"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "service",
+    "message"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
